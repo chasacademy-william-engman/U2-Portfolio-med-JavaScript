@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/base.css" />
     <link rel="stylesheet" href="../styles/projects.css" />
+    <script src="../scripts/api/github-api.js" defer></script>
     <title>Projects</title>
   </head>
   <body>
@@ -144,167 +145,16 @@
           <h1 class="title-h1">Projects</h1>
           <p class="text-below-h1">Things I've built so far</p>
 
-          <div class="project-grid">
-            <article class="project-card">
-              <img
-                src="../images/smetfabriken.png"
-                class="card-logo"
-                alt="Graphic illustration of purple batter being stirred with a spatula in a bowl in front of a factory"
-              />
-
-              <div class="info">
-                <h2>Smetfabriken</h2>
-
-                <p class="description">
-                  Welcome to Smetfabriken! Here you can find information about
-                  our products and services. We offer a wide range of batter
-                  products to suit every taste and need. Explore our website to
-                  learn more about our offerings and how to place an order. You
-                  provide the ingredients, and we handle the rest! Your vision,
-                  our batter!
-                </p>
-
-                <p class="tech-stack">
-                  <strong>Tech Stack : </strong>HTML/CSS, JavaScript
-                </p>
-
-                <div class="links">
-                  <a
-                    href="https://chasacademy-william-engman.github.io/Smetfabriken/"
-                    target="_blank"
-                    ><svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="link-svg icon-invert"
-                    >
-                      <path
-                        d="M11.2867 8.71306C10.6041 8.03075 9.67846 7.64746 8.71334 7.64746C7.74821 7.64746 6.82259 8.03075 6.14 8.71306L3.56584 11.2864C2.88324 11.969 2.49976 12.8948 2.49976 13.8601C2.49976 14.8255 2.88324 15.7513 3.56584 16.4339C4.24844 17.1165 5.17424 17.5 6.13959 17.5C7.10493 17.5 8.03074 17.1165 8.71334 16.4339L10 15.1472"
-                        stroke="black"
-                        stroke-width="1.66667"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8.71332 11.2864C9.39591 11.9687 10.3215 12.352 11.2867 12.352C12.2518 12.352 13.1774 11.9687 13.86 11.2864L16.4342 8.71309C17.1168 8.03049 17.5002 7.10469 17.5002 6.13934C17.5002 5.174 17.1168 4.24819 16.4342 3.56559C15.7516 2.88299 14.8257 2.49951 13.8604 2.49951C12.8951 2.49951 11.9693 2.88299 11.2867 3.56559L9.99998 4.85226"
-                        stroke="black"
-                        stroke-width="1.66667"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    Live Preview</a
-                  >
-                  <a
-                    href="https://github.com/chasacademy-william-engman/Smetfabriken"
-                    target="_blank"
-                    ><svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="github-svg icon-invert"
-                    >
-                      <g clip-path="url(#clip0_21_231)">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M10 0C4.475 0 0 4.475 0 10C0 14.425 2.8625 18.1625 6.8375 19.4875C7.3375 19.575 7.525 19.275 7.525 19.0125C7.525 18.775 7.5125 17.9875 7.5125 17.15C5 17.6125 4.35 16.5375 4.15 15.975C4.0375 15.6875 3.55 14.8 3.125 14.5625C2.775 14.375 2.275 13.9125 3.1125 13.9C3.9 13.8875 4.4625 14.625 4.65 14.925C5.55 16.4375 6.9875 16.0125 7.5625 15.75C7.65 15.1 7.9125 14.6625 8.2 14.4125C5.975 14.1625 3.65 13.3 3.65 9.475C3.65 8.3875 4.0375 7.4875 4.675 6.7875C4.575 6.5375 4.225 5.5125 4.775 4.1375C4.775 4.1375 5.6125 3.875 7.525 5.1625C8.325 4.9375 9.175 4.825 10.025 4.825C10.875 4.825 11.725 4.9375 12.525 5.1625C14.4375 3.8625 15.275 4.1375 15.275 4.1375C15.825 5.5125 15.475 6.5375 15.375 6.7875C16.0125 7.4875 16.4 8.375 16.4 9.475C16.4 13.3125 14.0625 14.1625 11.8375 14.4125C12.2 14.725 12.5125 15.325 12.5125 16.2625C12.5125 17.6 12.5 18.675 12.5 19.0125C12.5 19.275 12.6875 19.5875 13.1875 19.4875C15.1726 18.8173 16.8976 17.5414 18.1197 15.8395C19.3418 14.1375 19.9994 12.0952 20 10C20 4.475 15.525 0 10 0Z"
-                          fill="black"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_21_231">
-                          <rect width="20" height="20" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    View Code</a
-                  >
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img
-                src="../images/william-github.png"
-                class="card-logo"
-                alt="Blue and white geometric pixel art"
-              />
-
-              <div class="info">
-                <h2>U1-Portfoliosidan</h2>
-
-                <p class="description">
-                  Welcome to U1-Portfoliosidan! This is the official repository
-                  behind my portfolio website.
-                </p>
-
-                <p class="tech-stack"><strong>Tech Stack : </strong>HTML/CSS</p>
-
-                <div class="links">
-                  <a
-                    href="https://chasacademy-william-engman.github.io/U1-Portfoliosidan/index.html"
-                    target="_blank"
-                    ><svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="link-svg icon-invert"
-                    >
-                      <path
-                        d="M11.2867 8.71306C10.6041 8.03075 9.67846 7.64746 8.71334 7.64746C7.74821 7.64746 6.82259 8.03075 6.14 8.71306L3.56584 11.2864C2.88324 11.969 2.49976 12.8948 2.49976 13.8601C2.49976 14.8255 2.88324 15.7513 3.56584 16.4339C4.24844 17.1165 5.17424 17.5 6.13959 17.5C7.10493 17.5 8.03074 17.1165 8.71334 16.4339L10 15.1472"
-                        stroke="black"
-                        stroke-width="1.66667"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8.71332 11.2864C9.39591 11.9687 10.3215 12.352 11.2867 12.352C12.2518 12.352 13.1774 11.9687 13.86 11.2864L16.4342 8.71309C17.1168 8.03049 17.5002 7.10469 17.5002 6.13934C17.5002 5.174 17.1168 4.24819 16.4342 3.56559C15.7516 2.88299 14.8257 2.49951 13.8604 2.49951C12.8951 2.49951 11.9693 2.88299 11.2867 3.56559L9.99998 4.85226"
-                        stroke="black"
-                        stroke-width="1.66667"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    Live Preview
-                  </a>
-                  <a
-                    href="https://github.com/chasacademy-william-engman/U1-Portfoliosidan"
-                    target="_blank"
-                    ><svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="github-svg icon-invert"
-                    >
-                      <g clip-path="url(#clip0_21_232)">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M10 0C4.475 0 0 4.475 0 10C0 14.425 2.8625 18.1625 6.8375 19.4875C7.3375 19.575 7.525 19.275 7.525 19.0125C7.525 18.775 7.5125 17.9875 7.5125 17.15C5 17.6125 4.35 16.5375 4.15 15.975C4.0375 15.6875 3.55 14.8 3.125 14.5625C2.775 14.375 2.275 13.9125 3.1125 13.9C3.9 13.8875 4.4625 14.625 4.65 14.925C5.55 16.4375 6.9875 16.0125 7.5625 15.75C7.65 15.1 7.9125 14.6625 8.2 14.4125C5.975 14.1625 3.65 13.3 3.65 9.475C3.65 8.3875 4.0375 7.4875 4.675 6.7875C4.575 6.5375 4.225 5.5125 4.775 4.1375C4.775 4.1375 5.6125 3.875 7.525 5.1625C8.325 4.9375 9.175 4.825 10.025 4.825C10.875 4.825 11.725 4.9375 12.525 5.1625C14.4375 3.8625 15.275 4.1375 15.275 4.1375C15.825 5.5125 15.475 6.5375 15.375 6.7875C16.0125 7.4875 16.4 8.375 16.4 9.475C16.4 13.3125 14.0625 14.1625 11.8375 14.4125C12.2 14.725 12.5125 15.325 12.5125 16.2625C12.5125 17.6 12.5 18.675 12.5 19.0125C12.5 19.275 12.6875 19.5875 13.1875 19.4875C15.1726 18.8173 16.8976 17.5414 18.1197 15.8395C19.3418 14.1375 19.9994 12.0952 20 10C20 4.475 15.525 0 10 0Z"
-                          fill="black"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_21_232">
-                          <rect width="20" height="20" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    View Code</a
-                  >
-                </div>
-              </div>
-            </article>
+          <div class="status-container">
+            <span class="loader hidden"></span>
+            <div class="error-container hidden">
+              <p class="error-status">404</p>
+              <p class="error-message">
+                Could not fetch data. Please try again.
+              </p>
+            </div>
           </div>
+          <div class="project-grid hidden"></div>
         </section>
       </main>
     </div>

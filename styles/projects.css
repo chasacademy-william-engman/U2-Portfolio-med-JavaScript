@@ -96,6 +96,38 @@ p {
   }
 }
 
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.error-status {
+  font-size: 5em;
+  line-height: 1;
+}
+
+.project-grid.hidden,
+.status-container.hidden,
+.hidden {
+  display: none;
+}
+
 /* desktop */
 @media (min-width: 1270px) {
   .project-card h2 {
