@@ -35,26 +35,23 @@
       "location": "Ingarö",
       "employmentType": "Full Time",
       "startDate": "2026-03",
-      "endDate": "2026-08",
-      "description": []
+      "endDate": "2026-08"
     },
     {
-      "jobTitle": "Tjejmilen",
+      "jobTitle": "Race Official",
       "company": "Marathongruppen",
       "location": "Djurgården",
       "employmentType": "Race Official",
       "startDate": "2024-08",
-      "endDate": "2024-08",
-      "description": []
+      "endDate": "2024-08"
     },
     {
-      "jobTitle": "Dog Daycare",
+      "jobTitle": "Practice",
       "company": "Canopus Hunddagis",
       "location": "Gustavsberg",
       "employmentType": "Practice",
       "startDate": "2021-09",
-      "endDate": "2021-09",
-      "description": []
+      "endDate": "2021-09"
     }
   ]
 }
