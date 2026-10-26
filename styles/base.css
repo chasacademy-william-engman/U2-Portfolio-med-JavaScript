@@ -23,6 +23,8 @@
   --project-card-background: #ffffff;
   --project-card-shadow: #e2e2e2;
 
+  --theme-switch-bg: #ffffff;
+
   /* Layout */
   --mobile-page-padding: 24px;
   --desktop-page-padding: 30px 100px;
@@ -39,30 +41,26 @@
   --nav-fontsize-desktop: 40px;
 }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Colors */
-    --color-bg: #191919;
-    --color-heading: #d9d9d9;
-    --color-text: #a7a7a7;
-    --color-text-muted: #a7a7a7;
-    --color-card: #363636;
-    --color-h2-projects: var(--color-text);
-    --color-link: var(--color-text);
+.darkmode {
+  --color-bg: #191919;
+  --color-heading: #d9d9d9;
+  --color-text: #a7a7a7;
+  --color-text-muted: #a7a7a7;
+  --color-card: #363636;
+  --color-h2-projects: var(--color-text);
+  --color-link: var(--color-text);
+  --theme-switch-bg: #6b6b6b;
 
-    --project-card-background: #363636;
-    --project-card-shadow: none;
-  }
+  --project-card-background: #363636;
+  --project-card-shadow: none;
+}
 
-  /* Makes dark icons lighter (black icons become white icons) */
-  .icon-invert {
-    filter: invert(1);
-  }
+.darkmode .icon-invert {
+  filter: invert(1);
+}
 
-  .socials svg path {
-    fill: var(--color-text);
-  }
+.darkmode .socials svg path {
+  fill: var(--color-text);
 }
 
 /* Mobile styles */
@@ -149,8 +147,6 @@ footer {
 }
 
 .logo {
-  grid-column: 1;
-  grid-row: 1;
   text-decoration: none;
   font-size: var(--nav-fontsize-mobile);
 
@@ -160,6 +156,42 @@ footer {
 
   color: transparent;
   -webkit-text-fill-color: transparent;
+}
+
+.logo-container {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.theme-switch {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  width: 3em;
+  background-color: var(--theme-switch-bg);
+  border-color: var(--color-heading);
+
+  svg {
+    fill: var(--color-heading);
+  }
+
+  svg:last-child {
+    display: none;
+  }
+}
+
+.darkmode .theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode .theme-switch svg:last-child {
+  display: block;
 }
 
 .desktop-menu {
