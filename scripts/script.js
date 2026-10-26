@@ -1,13 +1,4 @@
-let darkmode = localStorage.getItem("darkmode");
 const themeSwitch = document.querySelector(".theme-switch");
-
-const computerIsDark = window.matchMedia(
-  "(prefers-color-scheme: dark)",
-).matches;
-
-if (darkmode === "active" || (!darkmode && computerIsDark)) {
-  document.body.classList.add("darkmode");
-}
 
 const enableDarkmode = () => {
   document.body.classList.add("darkmode");
@@ -20,6 +11,7 @@ const disableDarkmode = () => {
 };
 
 themeSwitch.addEventListener("click", () => {
-  darkmode = localStorage.getItem("darkmode");
-  darkmode !== "active" ? enableDarkmode() : disableDarkmode();
+  document.body.classList.contains("darkmode")
+    ? disableDarkmode()
+    : enableDarkmode();
 });
