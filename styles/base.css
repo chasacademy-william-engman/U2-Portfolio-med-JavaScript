@@ -53,6 +53,10 @@
 
   --project-card-background: #363636;
   --project-card-shadow: none;
+
+  .theme-switch:focus-visible {
+    outline: 3px solid #ffcc00;
+  }
 }
 
 .darkmode .icon-invert {
