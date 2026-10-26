@@ -25,7 +25,10 @@
       <header>
         <div class="logo-container">
           <a href="../index.html" class="logo">WE</a>
-          <button class="theme-switch">
+          <button
+            class="theme-switch"
+            aria-label="switch between darkmode and lightmode"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -180,7 +183,18 @@
 
       <main>
         <section class="projects">
-          <h1 class="title-h1">Projects</h1>
+          <div class="filter-container">
+            <h1 class="title-h1">Projects</h1>
+            <div class="selection-container">
+              <label for="filter">Filter by technology:</label>
+              <select name="filter" id="filter">
+                <option value="all">All</option>
+                <option value="saab">HTML</option>
+                <option value="mercedes">CSS</option>
+                <option value="audi">JavaScript</option>
+              </select>
+            </div>
+          </div>
           <p class="text-below-h1">Things I've built so far</p>
 
           <div class="status-container">

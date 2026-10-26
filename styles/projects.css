@@ -128,6 +128,20 @@ main {
   display: none;
 }
 
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  select {
+    align-self: flex-end;
+  }
+}
+
+.selection-container {
+  align-self: flex-end;
+}
+
 /* desktop */
 @media (min-width: 1270px) {
   .project-card h2 {
