@@ -6,20 +6,10 @@
     <link rel="stylesheet" href="../styles/base.css" />
     <link rel="stylesheet" href="../styles/technologies.css" />
     <script src="../scripts/script.js" defer></script>
+    <script src="../scripts/theme.js"></script>
     <title>Technologies</title>
   </head>
   <body>
-    <script>
-      const savedTheme = localStorage.getItem("darkmode");
-      const computerDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-
-      if (savedTheme === "active" || (!savedTheme && computerDark)) {
-        document.body.classList.add("darkmode");
-      }
-    </script>
-
     <div class="container">
       <header>
         <div class="logo-container">

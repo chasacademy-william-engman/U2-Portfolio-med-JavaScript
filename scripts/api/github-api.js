@@ -21,6 +21,12 @@ const showRepos = [
   "Smetfabriken",
 ];
 
+function showMessage(title, text) {
+  document.querySelector(".error-status").textContent = title;
+  document.querySelector(".error-message").textContent = text;
+  document.querySelector(".error-container").classList.remove("hidden");
+}
+
 const defaultImage = "../images/william-github.png";
 
 const projectGrid = document.querySelector(".project-grid");
@@ -36,36 +42,85 @@ async function getJson(url) {
     }
   }
 
-  const response = await fetch(url);
+  const response = await fetch(url, { signal: AbortSignal.timeout(8000) });
 
   if (!response.ok) {
-    loader.classList.add("hidden");
-    document.querySelector(".error-container").classList.remove("hidden");
-    document.querySelector(".error-status").textContent = response.status;
-
-    let finalErrorMessage = response.statusText;
-
-    try {
-      const errorData = await response.json();
-      if (errorData && errorData.message) {
-        finalErrorMessage = errorData.message;
-      }
-    } catch (error) {}
-
-    document.querySelector(".error-message").textContent = finalErrorMessage;
-    throw new Error(
-      `Error Github API (${response.status}): ${finalErrorMessage}`,
-    );
+    throw new Error(`GitHub answered ${response.status}`);
   }
 
   const data = await response.json();
-
   localStorage.setItem(url, JSON.stringify({ time: Date.now(), data: data }));
-
   return data;
 }
 
-async function renderRepos(repo) {
+async function createProjectCards(result) {
+  const articles = [];
+
+  for (const repo of result) {
+    if (!showRepos.includes(repo.name)) continue;
+
+    const extra = myProjects[repo.name] || {};
+
+    const languages = await getJson(repo.languages_url);
+    const techStack = Object.keys(languages).join(", ") || "No languages";
+
+    const article = document.createElement("article");
+    article.classList.add("project-card");
+
+    const img = document.createElement("img");
+    img.classList.add("card-logo");
+    img.src = extra.image || defaultImage;
+    img.alt = extra.alt || "";
+
+    const info = document.createElement("div");
+    info.classList.add("info");
+
+    const h2 = document.createElement("h2");
+    h2.textContent = repo.name;
+
+    const description = document.createElement("p");
+    description.classList.add("description");
+    description.textContent = repo.description || "No description yet";
+
+    const tech = document.createElement("p");
+    tech.classList.add("tech-stack");
+    const strong = document.createElement("strong");
+    strong.textContent = "Tech Stack : ";
+    tech.append(strong, techStack);
+
+    const links = document.createElement("div");
+    links.classList.add("links");
+
+    if (repo.has_pages) {
+      const liveLink = document.createElement("a");
+      liveLink.href = `https://chasacademy-william-engman.github.io/${repo.name}/`;
+      liveLink.target = "_blank";
+      liveLink.innerHTML = linkIcon;
+      liveLink.append("Live Preview");
+      links.append(liveLink);
+    }
+
+    const codeLink = document.createElement("a");
+    codeLink.href = repo.html_url;
+    codeLink.target = "_blank";
+    codeLink.innerHTML = githubIcon;
+    codeLink.append("View Code");
+    links.append(codeLink);
+
+    info.append(h2, description, tech, links);
+    article.append(img, info);
+    articles.push(article);
+  }
+
+  if (articles.length === 0) {
+    showMessage("No projects yet", "There are no projects to show right now.");
+    return;
+  }
+
+  return articles;
+}
+
+async function renderRepos() {
   loader.classList.remove("hidden");
 
   try {
@@ -73,69 +128,17 @@ async function renderRepos(repo) {
       "https://api.github.com/users/chasacademy-william-engman/repos",
     );
 
-    const articles = [];
+    const articles = await createProjectCards(result);
 
-    for (const repo of result) {
-      if (!showRepos.includes(repo.name)) continue;
-
-      const extra = myProjects[repo.name] || {};
-
-      const languages = await getJson(repo.languages_url);
-      const techStack = Object.keys(languages).join(", ") || "No languages";
-
-      const article = document.createElement("article");
-      article.classList.add("project-card");
-
-      const img = document.createElement("img");
-      img.classList.add("card-logo");
-      img.src = extra.image || defaultImage;
-      img.alt = extra.alt || "";
-
-      const info = document.createElement("div");
-      info.classList.add("info");
-
-      const h2 = document.createElement("h2");
-      h2.textContent = repo.name;
-
-      const description = document.createElement("p");
-      description.classList.add("description");
-      description.textContent = repo.description || "No description yet";
-
-      const tech = document.createElement("p");
-      tech.classList.add("tech-stack");
-      const strong = document.createElement("strong");
-      strong.textContent = "Tech Stack : ";
-      tech.append(strong, techStack);
-
-      const links = document.createElement("div");
-      links.classList.add("links");
-
-      if (repo.has_pages) {
-        const liveLink = document.createElement("a");
-        liveLink.href = `https://chasacademy-william-engman.github.io/${repo.name}/`;
-        liveLink.target = "_blank";
-        liveLink.innerHTML = linkIcon;
-        liveLink.append("Live Preview");
-        links.append(liveLink);
-      }
-
-      const codeLink = document.createElement("a");
-      codeLink.href = repo.html_url;
-      codeLink.target = "_blank";
-      codeLink.innerHTML = githubIcon;
-      codeLink.append("View Code");
-      links.append(codeLink);
-
-      info.append(h2, description, tech, links);
-      article.append(img, info);
-      articles.push(article);
-    }
-
-    loader.classList.add("hidden");
     projectGrid.append(...articles);
     projectGrid.classList.remove("hidden");
   } catch (error) {
-    console.log(error.message);
+    showMessage(
+      "Could not load projects",
+      "GitHub is not responding right now. Please try again later.",
+    );
+  } finally {
+    loader.classList.add("hidden");
   }
 }
 renderRepos();

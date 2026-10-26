@@ -1,42 +1,32 @@
 const themeSwitch = document.querySelector(".theme-switch");
 const filterSelect = document.getElementById("filter");
-const cards = document.querySelectorAll(".project-card");
 
 const enableDarkmode = () => {
-  document.body.classList.add("darkmode");
+  document.documentElement.classList.add("darkmode");
   localStorage.setItem("darkmode", "active");
 };
 
 const disableDarkmode = () => {
-  document.body.classList.remove("darkmode");
-  localStorage.setItem("darkmode", null);
+  document.documentElement.classList.remove("darkmode");
+  localStorage.setItem("darkmode", "inactive");
 };
 
 themeSwitch.addEventListener("click", () => {
-  document.body.classList.contains("darkmode")
+  document.documentElement.classList.contains("darkmode")
     ? disableDarkmode()
     : enableDarkmode();
 });
 
-const filterProjects = (selectedOption) => {
-  const selectedText = selectedOption.text.toLowerCase();
-  console.log(selectedText);
+const filterProjects = (technology) => {
+  const cards = document.querySelectorAll(".project-card");
   cards.forEach((card) => {
-    const techElement = card.querySelector(".tech-stack");
-    const cardTechText = techElement
-      ? techElement.textContent.toLowerCase()
-      : "";
-
-    if (selectedText === "all" || cardTechText.includes(selectedText)) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
-    }
+    const techText =
+      card.querySelector(".tech-stack")?.textContent.toLowerCase() ?? "";
+    const match = technology === "all" || techText.includes(technology);
+    card.style.display = match ? "" : "none";
   });
 };
 
-filterSelect.addEventListener("change", (event) => {
-  const selectedIndex = filterSelect.selectedIndex;
-  const selectedOption = filterSelect.options[selectedIndex];
-  filterProjects(selectedOption);
-});
+filterSelect?.addEventListener("change", () =>
+  filterProjects(filterSelect.value),
+);

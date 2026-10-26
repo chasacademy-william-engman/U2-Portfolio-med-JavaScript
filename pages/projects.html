@@ -7,20 +7,10 @@
     <link rel="stylesheet" href="../styles/projects.css" />
     <script src="../scripts/api/github-api.js" defer></script>
     <script src="../scripts/script.js" defer></script>
+    <script src="../scripts/theme.js"></script>
     <title>Projects</title>
   </head>
   <body>
-    <script>
-      const savedTheme = localStorage.getItem("darkmode");
-      const computerDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-
-      if (savedTheme === "active" || (!savedTheme && computerDark)) {
-        document.body.classList.add("darkmode");
-      }
-    </script>
-
     <div class="container">
       <header>
         <div class="logo-container">
@@ -189,16 +179,20 @@
               <label for="filter">Filter by technology:</label>
               <select name="filter" id="filter">
                 <option value="all">All</option>
-                <option value="saab">HTML</option>
-                <option value="mercedes">CSS</option>
-                <option value="audi">JavaScript</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
               </select>
             </div>
           </div>
           <p class="text-below-h1">Things I've built so far</p>
 
-          <div class="status-container">
-            <span class="loader hidden"></span>
+          <div class="status-container" role="status">
+            <span
+              class="loader hidden"
+              role="img"
+              aria-label="Loading projects"
+            ></span>
             <div class="error-container hidden">
               <p class="error-status">404</p>
               <p class="error-message">

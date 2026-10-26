@@ -2,54 +2,51 @@
   "education": [
     {
       "title": "Full-Stack JavaScript Developer",
-      "institution": "Chas Academy",
+      "place": "Chas Academy",
       "location": "Online/Globen",
-      "studyType": "Full Time",
+      "type": "Full Time",
       "startDate": "2026-09",
-      "endDate": null,
-      "status": "Ongoing"
+      "endDate": null
     },
     {
       "title": "Information and media technology",
-      "institution": "Nacka Gymnasium",
+      "place": "Nacka Gymnasium",
       "location": "Nacka",
-      "studyType": "Full Time",
+      "type": "Full Time",
       "startDate": "2021-08",
-      "endDate": "2025-06",
-      "status": "Completed"
+      "endDate": "2025-06"
     },
     {
       "title": "Primary school",
-      "institution": "Hemmesta Skolan",
+      "place": "Hemmesta Skolan",
       "location": "Värmdö",
-      "studyType": "Full Time",
+      "type": "Full Time",
       "startDate": "2012",
-      "endDate": "2022",
-      "status": "Completed"
+      "endDate": "2022"
     }
   ],
   "workExperience": [
     {
-      "jobTitle": "Greenkeeper",
-      "company": "Ingarö GK",
+      "title": "Greenkeeper",
+      "place": "Ingarö GK",
       "location": "Ingarö",
-      "employmentType": "Full Time",
+      "type": "Full Time",
       "startDate": "2026-03",
       "endDate": "2026-08"
     },
     {
-      "jobTitle": "Race Official",
-      "company": "Marathongruppen",
+      "title": "Race Official",
+      "place": "Marathongruppen",
       "location": "Djurgården",
-      "employmentType": "Race Official",
+      "type": "Race Official",
       "startDate": "2024-08",
       "endDate": "2024-08"
     },
     {
-      "jobTitle": "Practice",
-      "company": "Canopus Hunddagis",
+      "title": "Practice",
+      "place": "Canopus Hunddagis",
       "location": "Gustavsberg",
-      "employmentType": "Practice",
+      "type": "Practice",
       "startDate": "2021-09",
       "endDate": "2021-09"
     }
