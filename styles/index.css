@@ -1,12 +1,6 @@
 /* Mobile styles */
 .hero-title .gradient-text {
-  background: linear-gradient(
-    90deg,
-    #13b0f5 0%,
-    #13b0f5 60%,
-    #7b61ff 100%,
-    #e70faa 100%
-  );
+  background: var(--gradient-heading);
 
   background-clip: text;
   -webkit-background-clip: text;

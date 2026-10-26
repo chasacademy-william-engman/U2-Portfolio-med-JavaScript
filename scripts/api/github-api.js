@@ -112,11 +112,6 @@ async function createProjectCards(result) {
     articles.push(article);
   }
 
-  if (articles.length === 0) {
-    showMessage("No projects yet", "There are no projects to show right now.");
-    return;
-  }
-
   return articles;
 }
 
@@ -129,6 +124,14 @@ async function renderRepos() {
     );
 
     const articles = await createProjectCards(result);
+
+    if (articles.length === 0) {
+      showMessage(
+        "No projects yet",
+        "There are no projects to show right now.",
+      );
+      return;
+    }
 
     projectGrid.append(...articles);
     projectGrid.classList.remove("hidden");

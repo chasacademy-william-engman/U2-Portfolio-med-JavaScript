@@ -7,7 +7,7 @@
 
 :root {
   /* Scheme */
-  color-scheme: light dark;
+  color-scheme: light;
 
   /* Colors */
   --color-bg: #ffffff;
@@ -33,8 +33,8 @@
   --desktop-padding-nav-to-title: 124px;
 
   /* Gradients */
-  --gradient-heading: linear-gradient(90deg, #13b0f5 0%, #e70faa 100%);
-  --gradient-360: linear-gradient(360deg, #13b0f5 0%, #e70faa 100%);
+  --gradient-heading: linear-gradient(90deg, #0369a1 0%, #be0b8c 100%);
+  --gradient-360: linear-gradient(360deg, #0369a1 0%, #be0b8c 100%);
 
   /* Typography */
   --nav-fontsize-mobile: 30px;
@@ -55,6 +55,8 @@
 
   --project-card-background: #363636;
   --project-card-shadow: none;
+
+  --gradient-heading: linear-gradient(90deg, #13b0f5 0%, #e70faa 100%);
 
   .theme-switch:focus-visible {
     outline: 3px solid #ffcc00;
