@@ -46,6 +46,7 @@ h2 {
 .career-type {
   justify-self: end;
   align-self: center;
+  text-align: center;
   color: var(--color-button-text);
   background-color: var(--color-button-success);
   border-radius: 25px;

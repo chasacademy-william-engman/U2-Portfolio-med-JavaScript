@@ -12,7 +12,7 @@ function createCareerItem(item) {
   const h3 = document.createElement("h3");
   h3.textContent = item.title;
 
-  const type = document.createElement("button");
+  const type = document.createElement("span");
   type.classList.add("career-type");
   type.textContent = item.type;
 
