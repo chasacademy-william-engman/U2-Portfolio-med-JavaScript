@@ -154,7 +154,6 @@ main {
   .project-card {
     margin-top: 80px;
     min-height: 567px;
-    min-width: 373px;
   }
 
   .description {
@@ -173,7 +172,7 @@ main {
 
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 40px;
   }
 
