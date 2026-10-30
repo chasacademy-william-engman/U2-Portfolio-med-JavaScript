@@ -1,6 +1,6 @@
 const savedTheme = localStorage.getItem("darkmode");
-const computerDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-if (savedTheme === "active" || (!savedTheme && computerDark)) {
+if (savedTheme === "active" || (!savedTheme && prefersDark)) {
   document.documentElement.classList.add("darkmode");
 }

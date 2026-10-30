@@ -56,7 +56,7 @@
   --project-card-background: #363636;
   --project-card-shadow: none;
 
-  --gradient-heading: linear-gradient(90deg, #13b0f5 0%, #e70faa 100%);
+  --gradient-heading: linear-gradient(90deg, #13b0f5 0%, #f033b8 100%);
 
   .theme-switch:focus-visible {
     outline: 3px solid #ffcc00;
