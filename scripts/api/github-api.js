@@ -53,16 +53,23 @@ async function getJson(url) {
   return data;
 }
 
-async function createProjectCards(result) {
+async function getTechStack(repo) {
+  try {
+    const languages = await getJson(repo.languages_url);
+    return Object.keys(languages).join(", ") || "No languages";
+  } catch {
+    return "Unknown";
+  }
+}
+
+async function createProjectCards(repos) {
+  const selected = repos.filter((repo) => showRepos.includes(repo.name));
   const articles = [];
 
-  for (const repo of result) {
-    if (!showRepos.includes(repo.name)) continue;
+  for (const repo of selected) {
+    const techStack = await getTechStack(repo);
 
     const extra = myProjects[repo.name] || {};
-
-    const languages = await getJson(repo.languages_url);
-    const techStack = Object.keys(languages).join(", ") || "No languages";
 
     const article = document.createElement("article");
     article.classList.add("project-card");
